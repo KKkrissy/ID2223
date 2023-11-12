@@ -5,5 +5,5 @@ joblib
 scikit-learn==1.1.1
 seaborn
 dataframe-image
-modal==4.24
+modal== 0.55.4091
 gradio==3.14
