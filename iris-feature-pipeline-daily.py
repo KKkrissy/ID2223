@@ -71,6 +71,8 @@ if __name__ == "__main__":
     if LOCAL == True :
         g()
     else:
-        stub.deploy("iris_daily")
-        with stub.run():
-            f()
+        try:
+          stub.deploy("iris_daily")
+         except Exception as e:
+          print(f"Error during deploy: {e}")
+
