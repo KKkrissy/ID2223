@@ -1,0 +1,27 @@
+name: Feature Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  feature-pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+          # Add any other setup steps
+
+      - name: Run Feature Pipeline
+        run: python iris-feature-pipipeline-daily.py
